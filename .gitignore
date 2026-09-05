@@ -1,0 +1,15 @@
+/target/
+**/target/
+**/node_modules/
+**/dist/
+**/.dart_tool/
+**/build/
+/.vendor/
+/.zed/
+/.zed-pack/
+/.ores/
+.env
+.env.*
+.DS_Store
+*.log
+tmp/
