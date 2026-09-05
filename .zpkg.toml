@@ -1,0 +1,38 @@
+[package]
+org = "ores-wasm-loaders"
+name = "owl-e2e"
+version = "0.1.0"
+kind = "e2e"
+language = "typescript"
+description = "ORES Wasm Loaders: the acceptance suite"
+license = "MIT"
+
+[package.repository]
+vcs = "git"
+url = "https://github.com/ores-wasm-loaders/owl-e2e"
+
+[dependencies]
+"ores-wasm-loaders/owl-coordinator" = "^0.1.0"
+"ores-wasm-loaders-test/owl-fixtures" = "^0.1.0"
+
+[build]
+command = "node --test test/*.test.mjs"
+
+[publish]
+include_readme = true
+tag_format = "v{version}"
+exclude = [".env", ".env.*", ".vendor/**", ".zed/**", ".zed-pack/**", "tmp/**", "**/*.log", ".DS_Store", "**/target/**", "**/node_modules/**", "**/dist/**"]
+
+[install]
+dir = ".vendor/.zed"
+
+[targets.repository]
+dir = "."
+
+[targets.typescript]
+dir = "."
+name = "owl-e2e"
+adapter = "node"
+
+[scripts]
+test = "node --test test/*.test.mjs"
