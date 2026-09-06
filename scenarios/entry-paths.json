@@ -1,0 +1,35 @@
+[
+  {
+    "name": "cold",
+    "description": "The visitor lands on the application directly. Nothing was prepared.",
+    "prepare": false,
+    "expect": { "activates": true, "reusesPreparation": false }
+  },
+  {
+    "name": "prepared",
+    "description": "The marketing page prepared this app on intent; the visitor clicked through in the same document.",
+    "prepare": true,
+    "expect": { "activates": true, "reusesPreparation": true, "noBytesAfterClick": true }
+  },
+  {
+    "name": "cancelled",
+    "description": "Preparation began and was abandoned — the visitor scrolled away or the tab was hidden.",
+    "prepare": true,
+    "cancelAfterMs": 0,
+    "expect": { "activates": true, "reusesPreparation": false }
+  },
+  {
+    "name": "repeat",
+    "description": "A second activation in the same document: another island appears, or the shell reveals another view.",
+    "prepare": true,
+    "activateTwice": true,
+    "expect": { "activates": true, "singleInitialization": true }
+  },
+  {
+    "name": "stale",
+    "description": "A release is published between preparation and the click.",
+    "prepare": true,
+    "publishNewRelease": "2026.09.06-published-mid-visit",
+    "expect": { "activates": true, "reusesPreparation": false }
+  }
+]

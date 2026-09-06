@@ -1,0 +1,8 @@
+{
+  "name": "@ores-wasm-loaders/owl-e2e",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": { "test": "node --test test/*.test.mjs" }
+}
